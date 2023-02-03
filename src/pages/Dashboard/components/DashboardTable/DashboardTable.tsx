@@ -5,11 +5,12 @@ import {
   DashboardBody,
   DashboardHead,
   DashboardPagination,
+  DashboardModal,
 } from "./components";
 import { TableContainer, Table, Paper, Box } from "@mui/material";
 
 export const DashboardTable = () => {
-  const { data, id } = useContext(DashboardContext);
+  const { data, id, showProduct } = useContext(DashboardContext);
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -26,6 +27,7 @@ export const DashboardTable = () => {
       ) : (
         <AlertMessage severity={"info"} type={"emptyData"} />
       )}
+      {showProduct ? <DashboardModal /> : null}
     </Box>
   );
 };

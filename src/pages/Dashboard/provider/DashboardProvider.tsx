@@ -1,4 +1,4 @@
-import { createContext, ReactNode } from "react";
+import { createContext, ReactNode, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { API_URL } from "api/consts";
 import { Loader, AlertMessage } from "components";
@@ -11,6 +11,8 @@ type ContextTypes = {
   page: number;
   rowsPerPage: 5;
   error: string | null;
+  showProduct: number;
+  setShowProduct: (value: number) => void;
 };
 
 export const initialState: ContextTypes = {
@@ -29,6 +31,8 @@ export const initialState: ContextTypes = {
   rowsPerPage: 5,
   id: "",
   error: null,
+  showProduct: 0,
+  setShowProduct: () => {},
 };
 
 export const DashboardContext = createContext<ContextTypes>(initialState);
@@ -36,6 +40,7 @@ export const DashboardContext = createContext<ContextTypes>(initialState);
 const rowsPerPage = 5;
 
 export const DashboardProvider = ({ children }: { children: ReactNode }) => {
+  const [showProduct, setShowProduct] = useState(0);
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id") || "";
   const page = parseInt(searchParams.get("page") || "1", 10);
@@ -61,6 +66,8 @@ export const DashboardProvider = ({ children }: { children: ReactNode }) => {
         page,
         rowsPerPage,
         error,
+        showProduct,
+        setShowProduct,
       }}
     >
       {children}

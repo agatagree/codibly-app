@@ -10,7 +10,7 @@ export const Dashboard = () => {
           display: "flex",
           flexDirection: "column",
           gap: 3,
-          width: "100%"
+          width: "100%",
         }}
       >
         <DashboardToolbar />
