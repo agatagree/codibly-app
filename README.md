@@ -1,3 +1,38 @@
+## Project Overview 🎨🎉
+
+This is mini app, based on [REQRES API](https://reqres.in/api/). 
+As a user, you can:
+- see a product table list, navigate through the table pages (Api based pagination and filtration by ID)
+- check choosen product details
+- navigate by url address with searched items/pages
+
+
+## Tech/framework used 
+
+| Tech                                                      |        
+| -------------------------------------------------------   | 
+| [React](https://reactjs.org/)                             | 
+| [React Router](https://reacttraining.com/react-router/)   |
+| [MUI](https://mui.com/)                                   | 
+| [Unit tests](https://reactjs.org/docs/testing.html)       |
+| [Eslint](https://eslint.org/)                             |
+| [Prettier](https://prettier.io/)                          |
+
+
+## Installation in short: 
+
+```bash
+
+git clone https://github.com/agatagree/codibly-app.git
+
+npm install
+
+npm run start
+
+```
+<br>
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

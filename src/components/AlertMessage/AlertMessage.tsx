@@ -16,7 +16,7 @@ type AlertType = {
 
 export const AlertMessage = ({ type, severity }: AlertType) => {
   return (
-    <Alert variant="outlined" severity={severity? severity : "info"}>
+    <Alert variant="outlined" severity={severity ? severity : "info"}>
       {type ? alertType[type].text : "Sorry, an error occurs"}
     </Alert>
   );

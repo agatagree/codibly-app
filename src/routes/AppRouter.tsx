@@ -5,7 +5,7 @@ import { Container } from "@mui/material";
 
 export const AppRouter = () => {
   return (
-    <Container >
+    <Container>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="*" element={<AlertMessage type={"pageNotFound"} />} />
