@@ -9,12 +9,9 @@ export const useFetch = (url: string) => {
   useEffect(() => {
     fetch(url).then(
       (result) => {
-        if (!result.ok) {
-          setError(`${result.status}`);
-        }
-        result.json().then((data) => setData(data));
         setLoad(false);
         setError(null);
+        result.json().then((data) => setData(data));
       },
       (error) => {
         setLoad(false);

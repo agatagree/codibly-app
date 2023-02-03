@@ -19,4 +19,9 @@ describe("AlertMessage", () => {
     render(<AlertMessage severity={"error"} />);
     expect(screen.getByText("Sorry, an error occurs")).toBeInTheDocument();
   });
+
+  it("should render correct info type alert when this type was not defined", () => {
+    render(<AlertMessage />);
+    expect(screen.getByRole("alert")).toHaveClass("MuiAlert-outlinedInfo");
+  });
 });

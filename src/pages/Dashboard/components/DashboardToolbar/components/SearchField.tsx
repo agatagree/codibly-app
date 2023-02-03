@@ -45,13 +45,16 @@ export const SearchField = () => {
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <IconButton
-                aria-label="clear search result"
-                onClick={handleReset}
-                edge="end"
-              >
-                {id ? <ClearRoundedIcon /> : null}
-              </IconButton>
+              {id && (
+                <IconButton
+                  aria-label="clear search result"
+                  onClick={handleReset}
+                  edge="end"
+                  data-testid="clear-btn"
+                >
+                  <ClearRoundedIcon />
+                </IconButton>
+              )}
             </InputAdornment>
           ),
         }}
